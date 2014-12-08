@@ -1,0 +1,91 @@
+@import url("fonts.css");
+
+/*
+	General styles
+========================*/
+html, body {
+	margin: 0;
+	padding: 0;
+	background: #000;
+	height: 100%;
+	color: #FFF;
+	font-family: alternate_gothic;
+	letter-spacing:0.8px;
+}
+
+.vertical-align-parent {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/*
+	Slide styles
+========================*/
+.container {
+	height: 100vh;
+}
+
+.slide {
+	height: 100%;
+	margin: 0;
+	-webkit-transition: top ease-in-out .5s;
+	-moz-transition: top ease-in-out .5s;
+	transition: top ease-in-out .5s;
+}
+
+.slide:hover{
+	cursor: pointer;
+}
+
+.slide.slide-last:hover {
+	cursor: default;
+}
+
+.slide .content {
+	height: 100%;
+}
+
+.slide .content-frame {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.content-frame .content{
+	max-width: 900px;
+	margin: auto;
+}
+
+.content-frame .content h2 {
+	font-size:3em;
+	margin-bottom:15px;
+}
+
+.content-frame .content p {
+	font-size:1.25em;
+	text-indent:30px;
+}
+
+
+/*
+	Video styles
+========================*/
+.mainvideo {
+	display: none;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.mainvideo-first {
+	display: block;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<div class="container">
+		<div id="sl-01" class="first slide" data-bg="#000" data-next="#sl-02">
+			<div class="content vertical-align">
+				<video id="vid-logo-reveal" class="mainvideo mainvideo-first" autoplay data-next="#vid-logo-loop" muted="muted" poster="resources/video/logo-reveal-poster.png">
+					<source id="webmsource" src="resources/video/logo-reveal.webm" type="video/webm">
+					<source id="mp4source" src="resources/video/logo-reveal.mp4" type="video/mp4">
+				</video>
+				<video id="vid-logo-loop" class="mainvideo" loop muted="muted" poster="resources/video/logo-loop-poster.png">
+					<source id="webmsource" src="resources/video/logo-loop.webm" type="video/webm">
+					<source id="mp4source" src="resources/video/logo-loop.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+
+		<div id="sl-02" class="slide" data-next="#sl-03">
+			<div class="content-frame">
+				<div class="content">
+					<p class="vertical-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in urna ex. Aenean lorem lorem, ullamcorper sit amet dapibus in, finibus vitae urna. Nam commodo nibh volutpat, imperdiet enim interdum, semper nisi. Praesent sed nibh risus. Nam aliquet gravida quam eget semper. Nam vehicula, dolor non pellentesque ornare, metus nibh pulvinar ligula, eu sagittis leo magna ac orci. Aenean ultrices dapibus egestas. Vestibulum nec ornare sapien. Maecenas porttitor dictum tellus, ut eleifend ipsum finibus eu.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="sl-03" class="slide slide-last">
+			<div class="content-frame">
+				<div class="content">
+					<p class="vertical-align">Suspendisse ultricies ac urna et rutrum. Etiam ut consequat nisi, in semper diam. Phasellus hendrerit maximus lacus sed ultricies. Vestibulum eu odio suscipit, gravida tellus nec, interdum dui. Vestibulum molestie dapibus velit. Mauris eleifend nunc eu dignissim condimentum. Quisque finibus efficitur erat at eleifend. Sed eget lectus dictum, tristique ligula vel, rutrum sem. Fusce faucibus ullamcorper mi id dapibus. Curabitur ante odio, faucibus vel blandit nec, fermentum ac lectus. Fusce porttitor hendrerit magna, ut vulputate diam pretium in. Nunc laoreet dolor purus, vel rutrum neque eleifend non. Proin dapibus mauris sit amet augue convallis mattis. Aenean bibendum aliquam tellus non blandit. Vivamus semper euismod ex ut pulvinar. Donec congue lacus eget nunc mollis, et scelerisque neque viverra.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-2.1.1.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
