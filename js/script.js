@@ -8,22 +8,30 @@ app.slideColors = ['#03899C', '#00B945', '#FF7A00', '#1144AA',
 app.currentSlide = 1;
 
 // Functions
-app.goToByScroll = function(id) {
-	$('html,body').animate({
-		scrollTop: $(id).offset().top
-	}, 'slow');
-};
-
-app.toSlide = function(id) {
-	var index = parseInt(id.substring(id.indexOf('-')+1));
-
-	$(id).addClass('slide-show');
-	if (index < app.currentSlide) {
-		setTimeout(function() {
-			$('.slide').not(id).removeClass('slide-show');
-		}, 500);
+app.toSlide = function(index) {
+	// If trying to access a slide that doesn't exist, do nothing
+	if ((index < 1) || (index > $('.slide').length)) {
+		return;
 	}
-	app.currentSlide = parseInt($(id).attr('data-slide'));
+	// For each slide, show it if it is behind the slide to move to
+	// Otherwise hide it
+	$('.slide').each(function() {
+		var slide = $(this);
+		if (slide.attr('data-slide') <= index) {
+			slide.addClass('slide-show');
+		} else {
+			slide.removeClass('slide-show');
+		}
+	});
+	app.currentSlide = index;
+}
+
+app.nextSlide = function() {
+	app.toSlide(app.currentSlide + 1);
+}
+
+app.prevSlide = function() {
+	app.toSlide(app.currentSlide - 1);
 }
 
 app.setSlideBgs = function(colors) {
@@ -63,13 +71,29 @@ app.run = function() {
 		var nextSlide = slide.attr('data-next');
 
 		if ((app.videoDone === true) && (nextSlide !== undefined)) {
-			// app.goToByScroll(nextSlide);
-			// $(nextSlide).addClass('slide-show');
-			app.toSlide(nextSlide);
+			var nextIndex = parseInt(nextSlide.substring(nextSlide.indexOf('-')+1));
+			app.toSlide(nextIndex);
 		}
 	}).on('keydown', function(e) {
 		// When a key is pressed, perform a specific action
-		console.log(e.keyCode);
+		switch(e.keyCode) {
+			case 35:
+				// End key
+				app.toSlide($('.slide').length);
+				break;
+			case 36:
+				// Home key
+				app.toSlide(1);
+				break;
+			case 38:
+				// Up arrow
+				app.prevSlide();
+				break;
+			case 40:
+				// Down arrow
+				app.nextSlide();
+				break;
+		}
 	});
 
 };
