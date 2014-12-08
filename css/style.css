@@ -11,6 +11,7 @@ html, body {
 	color: #FFF;
 	font-family: alternate_gothic;
 	letter-spacing:0.8px;
+	overflow: hidden;
 }
 
 .vertical-align-parent {
@@ -35,7 +36,10 @@ html, body {
 }
 
 .slide {
+	position: absolute;
+	top: 100vh;
 	height: 100%;
+	width: 100%;
 	margin: 0;
 	-webkit-transition: top ease-in-out .5s;
 	-moz-transition: top ease-in-out .5s;
@@ -44,6 +48,10 @@ html, body {
 
 .slide:hover{
 	cursor: pointer;
+}
+
+.slide.slide-show, .slide.slide-first {
+	top: 0;
 }
 
 .slide.slide-last:hover {
