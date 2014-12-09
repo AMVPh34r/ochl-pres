@@ -20,7 +20,7 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 2.5em;
+	font-size: 4em;
 	margin-bottom: 15px;
 }
 
@@ -53,7 +53,6 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
-	transform: translateY(-50%);
 }
 
 .small-col {
@@ -61,7 +60,6 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
-	transform: translateY(-50%);
 }
 
 .half-col {
@@ -69,7 +67,6 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
-	transform: translateY(-50%);
 }
 
 .large-col {
@@ -77,7 +74,6 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
-	transform: translateY(-50%);
 }
 
 .tiny-col div, .small-col div, .half-col div, .large-col div,
@@ -132,8 +128,8 @@ ul li {
 }
 
 .slide .background img {
-	max-width: 100%;
-	max-height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .slide .content-frame {
@@ -143,12 +139,13 @@ ul li {
 }
 
 .slide .content-frame .content {
-	max-width: 90%;
+	max-width: 80%;
 	margin: auto;
 }
 
 .slide .content-frame .content img {
 	max-width: 100%;
+	margin-bottom: 15px;
 }
 
 .slide .img-full {
@@ -246,6 +243,10 @@ ul li {
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.text-center {
+	text-align: center;
 }
 
 .font-med {
