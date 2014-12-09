@@ -106,6 +106,7 @@ ul li {
 	-webkit-transition: top ease-in-out .5s;
 	-moz-transition: top ease-in-out .5s;
 	transition: top ease-in-out .5s;
+	overflow: hidden;
 }
 
 .slide:hover{
@@ -173,6 +174,7 @@ ul li {
 
 .img-slideshow a img {
 	border: none;
+	width: 100%;
 }
 
 .img-slideshow a.show {
