@@ -112,7 +112,7 @@ app.run = function() {
 	$('.img-slideshow .content').html($('.img-slideshow a:first').find('img').attr('rel')).animate({opacity: 0.7}, 400);
 	setInterval(app.gallery,6000);
 
-	$('video.mainvideo').on('ended click', function() {
+	$('.mainvideo').on('ended click', function() {
 		// Skip to the next video if it exists when the video is finished or clicked
 		var vid = $(this);
 
