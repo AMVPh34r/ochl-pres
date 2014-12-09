@@ -34,7 +34,8 @@ ul {
 }
 
 ul li {
-	margin-left: 25px;
+	margin-left: 50px;
+	list-style-type: disc;
 }
 
 .vertical-align-parent {
@@ -48,6 +49,18 @@ ul li {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.large {
+	font-size: 1.5em;
+}
+
+.half-col {
+	width: 50%;
+	float: left;
+	position: relative;
+	min-height: 1px;
 	transform: translateY(-50%);
 }
 
@@ -103,8 +116,8 @@ ul li {
 	margin: auto;
 }
 
-.slide .content-frame .content{
-	max-width: 900px;
+.slide .content-frame .content {
+	max-width: 70%;
 	margin: auto;
 }
 
@@ -116,7 +129,6 @@ ul li {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
 
 /*
 	Video styles

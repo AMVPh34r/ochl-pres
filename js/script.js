@@ -3,8 +3,8 @@ var app = app || {};
 
 // Variables
 app.canChangeSlides = false;
-app.slideColors = ['#000000', '#03899C', '#00B945', '#FF7A00', 
-				   '#1144AA', '#FF9700', '#00B945', '#03899C'];
+app.slideColors = ['#03899C', '#FF7A00', '#222222', '#1144AA', 
+				   '#FF9700', '#00B945', '#03899C', '#1144AA'];
 app.windowHash = "";
 app.currentSlide = 1;
 
