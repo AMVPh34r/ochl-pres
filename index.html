@@ -11,7 +11,11 @@
 	<div class="container">
 		<div id="sl-1" class="slide slide-first" data-bg="#000" data-slide="1" data-next="#sl-2">
 			<div class="content-frame vertical-align">
-					<video id="vid-logo-reveal" class="mainvideo mainvideo-first" autoplay data-next="#vid-logo-loop" muted="muted" poster="resources/video/logo-reveal-poster.png">
+					<video id="vid-black" class="mainvideo mainvideo-first" autoplay loop data-next="#vid-logo-reveal" muted="muted" poster="resources/video/black-poster.png">
+						<source id="webmsource" src="resources/video/black.webm" type="video/webm">
+						<source id="mp4source" src="resources/video/black.mp4" type="video/mp4">
+					</video>
+					<video id="vid-logo-reveal" class="mainvideo" autoplay data-next="#vid-logo-loop" muted="muted" poster="resources/video/logo-reveal-poster.png">
 						<source id="webmsource" src="resources/video/logo-reveal.webm" type="video/webm">
 						<source id="mp4source" src="resources/video/logo-reveal.mp4" type="video/mp4">
 					</video>
@@ -123,22 +127,6 @@
 				<div class="background vertical-align">
 					<img src="resources/image/hardware-gpu.jpg" alt="Background image" />
 				</div>
-				<div class="content vertical-align font-med">
-					<h2>Integrated Blog</h2>
-					<img src="resources/image/site-blog-closeup.png" alt="Site blog page close-up" />
-					<ul>
-						<li>Main blog page listing the most recent posts.</li>
-						<li>Permalinks to each blog post.</li>
-					</ul>
-				</div>
-			</div>
-		</div> <!-- ./slide -->
-
-		<div id="sl-8" class="slide" data-bg="#000" data-slide="8" data-next="#sl-9">
-			<div class="content-frame">
-				<div class="background vertical-align">
-					<img src="resources/image/hardware-fans.jpg" alt="Background image" />
-				</div>
 				<div class="content vertical-align">
 					<div class="half-col vertical-align">
 						<img src="resources/image/site-team-before.png" alt="Site about page pre-edit" />
@@ -151,6 +139,22 @@
 							<li>Position descriptions added.</li>
 						</ul>
 					</div>
+				</div>
+			</div>
+		</div> <!-- ./slide -->
+
+		<div id="sl-8" class="slide" data-bg="#000" data-slide="8" data-next="#sl-9">
+			<div class="content-frame">
+				<div class="background vertical-align">
+					<img src="resources/image/hardware-fans.jpg" alt="Background image" />
+				</div>
+				<div class="content vertical-align font-med">
+					<h2>Integrated Blog</h2>
+					<img src="resources/image/site-blog-closeup.png" alt="Site blog page close-up" />
+					<ul>
+						<li>Main blog page listing the most recent posts.</li>
+						<li>Permalinks to each blog post.</li>
+					</ul>
 				</div>
 			</div>
 		</div> <!-- ./slide -->
@@ -181,7 +185,7 @@
 		<div id="sl-10" class="slide slide-last" data-bg="#111" data-slide="10">
 			<div class="content-frame">
 				<div class="background vertical-align">
-					<img src="resources/image/ochl-logo-full.png" alt="Background image" />
+					<img src="resources/image/hardware-cpucooling.jpg" alt="Background image" />
 				</div>
 				<div class="content vertical-align">
 					<div class="text-center font-med">
