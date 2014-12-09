@@ -2,15 +2,17 @@
 var app = app || {};
 
 // Variables
-app.videoDone = false;
+app.canChangeSlides = false;
 app.slideColors = ['#03899C', '#00B945', '#FF7A00', '#1144AA', 
 				   '#FF9700', '#00B945', '#03899C', '#1144AA'];
+app.windowHash = "";
 app.currentSlide = 1;
 
 // Functions
 app.toSlide = function(index) {
-	// If trying to access a slide that doesn't exist, do nothing
-	if ((index < 1) || (index > $('.slide').length)) {
+	index = parseInt(index);
+	// If index is not a number, or if trying to access a slide that doesn't exist, do nothing
+	if ((isNaN(index)) || (index < 1) || (index > $('.slide').length)) {
 		return;
 	}
 	// For each slide, show it if it is behind the slide to move to
@@ -23,16 +25,40 @@ app.toSlide = function(index) {
 			slide.removeClass('slide-show');
 		}
 	});
+	// Modify URL hash
+	app.hash = index;
+	if (index > 1) {
+		window.location.hash = index;
+	} else {
+		window.location.hash = "";
+	}
 	app.currentSlide = index;
-}
+	app.canChangeSlides = true;	// Assuming a slide change was forced, allow future ones
+};
 
 app.nextSlide = function() {
 	app.toSlide(app.currentSlide + 1);
-}
+};
 
 app.prevSlide = function() {
 	app.toSlide(app.currentSlide - 1);
-}
+};
+
+app.checkHash = function() {
+	// If the URL hash points to a slide, go to it
+	app.hash = window.location.hash.substring(1);
+	if (app.hash === "") {
+		app.toSlide(1);
+	} else if (!isNaN(app.hash)) {
+		app.toSlide(app.hash);
+	} else {
+		window.location.hash = "";
+	}
+	// If the hash is empty, remove the number sign
+	if (app.hash === "") {
+		history.pushState("", document.title, window.location.pathname + window.location.search);
+	}
+};
 
 app.setSlideBgs = function(colors) {
 	var slides = $('.slide');
@@ -44,11 +70,15 @@ app.setSlideBgs = function(colors) {
 			slide.css('background-color', colors[i]);
 		}
 	}
-}
+};
 
 app.run = function() {
 	// Immediately pause all but first video
 	$('.mainvideo').not('.mainvideo-first').get(0).pause();
+
+	// Check if the URL hash is requesting a slide, and set up a listener
+	app.checkHash();
+	$(window).on('hashchange', app.checkHash);
 
 	// Set slide background colors
 	app.setSlideBgs(app.slideColors);
@@ -61,7 +91,7 @@ app.run = function() {
 			vid.hide();
 			$(vid.attr('data-next')).show().get(0).play();
 		} else {
-			app.videoDone = true;
+			app.canChangeSlides = true;
 		}
 	});
 
@@ -70,7 +100,7 @@ app.run = function() {
 		var slide = $(this);
 		var nextSlide = slide.attr('data-next');
 
-		if ((app.videoDone === true) && (nextSlide !== undefined)) {
+		if ((app.canChangeSlides === true) && (nextSlide !== undefined)) {
 			var nextIndex = parseInt(nextSlide.substring(nextSlide.indexOf('-')+1));
 			app.toSlide(nextIndex);
 		}
