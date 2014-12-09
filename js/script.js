@@ -26,10 +26,11 @@ app.toSlide = function(index) {
 		}
 	});
 	// Modify URL hash
-	app.hash = index;
 	if (index > 1) {
+		app.hash = index;
 		window.location.hash = index;
 	} else {
+		app.hash = "";
 		window.location.hash = "";
 	}
 	app.currentSlide = index;
@@ -47,7 +48,7 @@ app.prevSlide = function() {
 app.checkHash = function() {
 	// If the URL hash points to a slide, go to it
 	app.hash = window.location.hash.substring(1);
-	if (app.hash === "") {
+	if ((app.hash === "") && (app.currentSlide != 1)) {
 		app.toSlide(1);
 	} else if (!isNaN(app.hash)) {
 		app.toSlide(app.hash);
