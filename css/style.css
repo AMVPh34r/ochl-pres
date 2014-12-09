@@ -10,8 +10,31 @@ html, body {
 	height: 100%;
 	color: #FFF;
 	font-family: alternate_gothic;
+	font-size: 1.1em;
 	letter-spacing:0.8px;
 	overflow: hidden;
+}
+
+h1, h2 {
+	font-family:bebas_neue;
+}
+
+h1 {
+	font-size: 2.6em;
+	margin-bottom: 15px;
+}
+
+p {
+	font-size: 1.25em;
+	text-indent: 30px;
+}
+
+ul {
+	list-style-position: inside;
+}
+
+ul li {
+	margin-left: 25px;
 }
 
 .vertical-align-parent {
@@ -27,6 +50,7 @@ html, body {
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
 
 /*
 	Slide styles
@@ -80,20 +104,17 @@ html, body {
 }
 
 .slide .content-frame .content{
-	height: 100%;
 	max-width: 900px;
 	margin: auto;
-	z-index: 1;
 }
 
-.slide .content-frame .content h2 {
-	font-size:3em;
-	margin-bottom:15px;
-}
-
-.slide .content-frame .content p {
-	font-size:1.25em;
-	text-indent:30px;
+.slide .img-full {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
