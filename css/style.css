@@ -39,6 +39,10 @@ p {
 	text-indent: 30px;
 }
 
+p.no-indent {
+	text-indent: 0;
+}
+
 ul {
 	list-style-position: inside;
 }
@@ -53,6 +57,7 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
+	top: -25vh;
 }
 
 .small-col {
@@ -60,6 +65,7 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
+	top: -25vh;
 }
 
 .half-col {
@@ -67,6 +73,7 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
+	top: -25vh;
 }
 
 .large-col {
@@ -74,6 +81,7 @@ ul li {
 	float: left;
 	position: relative;
 	min-height: 1px;
+	top: -25vh;
 }
 
 .tiny-col div, .small-col div, .half-col div, .large-col div,
@@ -267,9 +275,9 @@ ul li {
 }
 
 .font-med {
-	font-size: 1.3em;
+	font-size: 3vh;
 }
 
 .font-large {
-	font-size: 2em;
+	font-size: 6vh;
 }
