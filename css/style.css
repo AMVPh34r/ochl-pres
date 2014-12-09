@@ -61,8 +61,16 @@ html, body {
 	cursor: default;
 }
 
-.slide .content {
+.slide .background {
+	position: absolute;
+	width: 100%;
 	height: 100%;
+	opacity: 0.5;
+}
+
+.slide .background img {
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .slide .content-frame {
@@ -71,17 +79,19 @@ html, body {
 	margin: auto;
 }
 
-.content-frame .content{
+.slide .content-frame .content{
+	height: 100%;
 	max-width: 900px;
 	margin: auto;
+	z-index: 1;
 }
 
-.content-frame .content h2 {
+.slide .content-frame .content h2 {
 	font-size:3em;
 	margin-bottom:15px;
 }
 
-.content-frame .content p {
+.slide .content-frame .content p {
 	font-size:1.25em;
 	text-indent:30px;
 }

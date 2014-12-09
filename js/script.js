@@ -66,9 +66,11 @@ app.setSlideBgs = function(colors) {
 	for (i=0; i<slides.length; i++) {
 		var slide = $(slides[i])
 		if (slide.attr('data-bg') !== undefined) {
-			slide.css('background-color', slide.attr('data-bg'));
+			slide.css('background', slide.attr('data-bg'));
+		} else if (slide.find('.background').length > 0) {
+			slide.css('background', '#000000');
 		} else {
-			slide.css('background-color', colors[i]);
+			slide.css('background', colors[i]);
 		}
 	}
 };
