@@ -11,17 +11,27 @@ html, body {
 	color: #FFF;
 	font-family: alternate_gothic;
 	font-size: 1.1em;
-	letter-spacing:0.8px;
+	letter-spacing: 0.8px;
 	overflow: hidden;
 }
 
-h1, h2 {
-	font-family:bebas_neue;
+h1, h2, h3 {
+	font-family: bebas_neue;
 }
 
 h1 {
-	font-size: 2.6em;
+	font-size: 2.5em;
 	margin-bottom: 15px;
+}
+
+h2 {
+	font-size: 2.2em;
+	margin-bottom: 10px;
+}
+
+h3 {
+	font-size: 2em;
+	margin-bottom: 10px;
 }
 
 p {
@@ -53,7 +63,7 @@ ul li {
 }
 
 .large {
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 .half-col {
@@ -62,6 +72,16 @@ ul li {
 	position: relative;
 	min-height: 1px;
 	transform: translateY(-50%);
+}
+
+.half-col div,
+.half-col p,
+.half-col ul,
+.half-col h1,
+.half-col h2,
+.half-col h3 {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 
@@ -132,6 +152,48 @@ ul li {
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+
+/*
+	Slideshow styles
+========================*/
+.img-slideshow {
+	position: relative;
+}
+
+.img-slideshow a {
+	float: left;
+	position: absolute;
+	transform: translateY(-50%);
+}
+
+.img-slideshow a img {
+	border: none;
+}
+
+.img-slideshow a.show {
+	z-index: 500;
+}
+
+.img-slideshow .caption {
+	z-index: 600; 
+	background-color: #000; 
+	color: #ffffff; 
+	height: 100px; 
+	width: 100%; 
+	position: absolute;
+	bottom: 0;
+}
+
+.img-slideshow .caption .content {
+	margin: 5px;
+}
+
+.img-slideshow .caption .content h3 {
+	margin: 0;
+	padding: 0;
+	color: #1DCCEF;
 }
 
 /*

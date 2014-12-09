@@ -68,8 +68,6 @@ app.setSlideBgs = function(colors) {
 		var slide = $(slides[i]);
 		if (slide.attr('data-bg') !== undefined) {
 			slide.css('background', slide.attr('data-bg'));
-		} else if (slide.find('.background img').length > 0) {
-			slide.css('background', '#000000');
 		} else {
 			slide.css('background', colors[ci]);
 		}
@@ -79,6 +77,20 @@ app.setSlideBgs = function(colors) {
 		}
 	}
 };
+
+app.gallery = function() {
+	var current = ($('.img-slideshow a.show')?  $('.img-slideshow a.show') : $('.img-slideshow a:first'));
+	var next = ((current.next().length) ? ((current.next().hasClass('caption'))? $('.img-slideshow a:first') :current.next()) : $('.img-slideshow a:first'));	
+	var caption = next.find('img').attr('rel');	
+	
+	//Set the fade in effect for the next image, show class has higher z-index
+	next.css({opacity: 0.0}).addClass('show').animate({opacity: 1.0}, 1000);
+	current.animate({opacity: 0.0}, 1000).removeClass('show');
+	
+	$('.img-slideshow .caption').animate({opacity: 0.0}, { queue:false, duration:0 }).animate({height: '1px'}, { queue:true, duration:300 });	
+	$('.img-slideshow .caption').animate({opacity: 0.7},100 ).animate({height: '100px'},500 );
+	$('.img-slideshow .content').html(caption);
+}
 
 app.run = function() {
 	// Immediately pause all but first video
@@ -90,6 +102,13 @@ app.run = function() {
 
 	// Set slide background colors
 	app.setSlideBgs(app.slideColors);
+
+	// Set up image slideshows
+	$('.img-slideshow a').css({opacity: 0.0});
+	$('.img-slideshow a:first').css({opacity: 1.0});
+	$('.img-slideshow .caption').css({width: $('.img-slideshow a').find('img').css('width')});
+	$('.img-slideshow .content').html($('.img-slideshow a:first').find('img').attr('rel')).animate({opacity: 0.7}, 400);
+	setInterval(app.gallery,6000);
 
 	$('.mainvideo').on('ended click', function() {
 		// Skip to the next video if it exists when the video is finished or clicked
