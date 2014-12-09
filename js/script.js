@@ -67,7 +67,7 @@ app.setSlideBgs = function(colors) {
 		var slide = $(slides[i])
 		if (slide.attr('data-bg') !== undefined) {
 			slide.css('background', slide.attr('data-bg'));
-		} else if (slide.find('.background').length > 0) {
+		} else if (slide.find('.background img').length > 0) {
 			slide.css('background', '#000000');
 		} else {
 			slide.css('background', colors[i]);
