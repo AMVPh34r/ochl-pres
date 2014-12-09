@@ -112,14 +112,11 @@ ul li {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	cursor: pointer;
 	-webkit-transition: top ease-in-out .5s, right ease-in-out .5s;
 	-moz-transition: top ease-in-out .5s, right ease-in-out .5s;
 	transition: top ease-in-out .5s, right ease-in-out .5s;
 	overflow: hidden;
-}
-
-.slide:hover{
-	cursor: pointer;
 }
 
 .slide.slide-top {

@@ -152,6 +152,14 @@ app.run = function() {
 				// Down arrow
 				app.nextSlide();
 				break;
+			case 67:
+				// C key
+				if ($('.slide').css('cursor') == "pointer") {
+					$('.slide').css('cursor', 'none');
+				} else {
+					$('.slide').css('cursor', '');
+				}
+				break;
 		}
 	});
 
