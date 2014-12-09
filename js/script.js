@@ -3,8 +3,8 @@ var app = app || {};
 
 // Variables
 app.canChangeSlides = false;
-app.slideColors = ['#03899C', '#00B945', '#FF7A00', '#1144AA', 
-				   '#FF9700', '#00B945', '#03899C', '#1144AA'];
+app.slideColors = ['#000000', '#03899C', '#00B945', '#FF7A00', 
+				   '#1144AA', '#FF9700', '#00B945', '#03899C'];
 app.windowHash = "";
 app.currentSlide = 1;
 
@@ -63,14 +63,19 @@ app.checkHash = function() {
 
 app.setSlideBgs = function(colors) {
 	var slides = $('.slide');
+	var ci = 0;
 	for (i=0; i<slides.length; i++) {
-		var slide = $(slides[i])
+		var slide = $(slides[i]);
 		if (slide.attr('data-bg') !== undefined) {
 			slide.css('background', slide.attr('data-bg'));
 		} else if (slide.find('.background img').length > 0) {
 			slide.css('background', '#000000');
 		} else {
-			slide.css('background', colors[i]);
+			slide.css('background', colors[ci]);
+		}
+		ci += 1;
+		if (ci >= colors.length) {
+			ci = 0;
 		}
 	}
 };
