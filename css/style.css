@@ -48,22 +48,20 @@ ul li {
 	list-style-type: disc;
 }
 
-.vertical-align-parent {
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-}
-
-.vertical-align {
+.tiny-col {
+	width: 10%;
+	float: left;
 	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
+	min-height: 1px;
 	transform: translateY(-50%);
 }
 
-.large {
-	font-size: 2em;
+.small-col {
+	width: 25%;
+	float: left;
+	position: relative;
+	min-height: 1px;
+	transform: translateY(-50%);
 }
 
 .half-col {
@@ -74,12 +72,20 @@ ul li {
 	transform: translateY(-50%);
 }
 
-.half-col div,
-.half-col p,
-.half-col ul,
-.half-col h1,
-.half-col h2,
-.half-col h3 {
+.large-col {
+	width: 75%;
+	float: left;
+	position: relative;
+	min-height: 1px;
+	transform: translateY(-50%);
+}
+
+.tiny-col div, .small-col div, .half-col div, .large-col div,
+.tiny-col p,   .small-col p,   .half-col p,   .large-col p,
+.tiny-col ul,  .small-col ul,  .half-col ul,  .large-col ul,
+.tiny-col h1,  .small-col h1,  .half-col h1,  .large-col h1,
+.tiny-col h2,  .small-col h2,  .half-col h2,  .large-col h2,
+.tiny-col h3,  .small-col h3,  .half-col h3,  .large-col h3 {
 	margin-left: 20px;
 	margin-right: 20px;
 }
@@ -122,7 +128,7 @@ ul li {
 	position: absolute;
 	max-width: 100%;
 	max-height: 100%;
-	opacity: 0.5;
+	opacity: 0.25;
 }
 
 .slide .background img {
@@ -137,7 +143,7 @@ ul li {
 }
 
 .slide .content-frame .content {
-	max-width: 70%;
+	max-width: 90%;
 	margin: auto;
 }
 
@@ -208,4 +214,44 @@ ul li {
 
 .mainvideo-first {
 	display: block;
+}
+
+
+/*
+	Overriding styles
+========================*/
+.vertical-align-parent {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.center {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.font-med {
+	font-size: 1.3em;
+}
+
+.font-large {
+	font-size: 2em;
 }
