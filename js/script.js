@@ -144,10 +144,14 @@ app.run = function() {
 				// Home key
 				app.toSlide(1);
 				break;
+			case 37:
+				// Left arrow
 			case 38:
 				// Up arrow
 				app.prevSlide();
 				break;
+			case 39:
+				// Right arrow
 			case 40:
 				// Down arrow
 				app.nextSlide();
