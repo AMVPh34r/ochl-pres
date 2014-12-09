@@ -100,12 +100,13 @@ ul li {
 .slide {
 	position: absolute;
 	top: 100vh;
+	right: 0;
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	-webkit-transition: top ease-in-out .5s;
-	-moz-transition: top ease-in-out .5s;
-	transition: top ease-in-out .5s;
+	-webkit-transition: top ease-in-out .5s, right ease-in-out .5s;
+	-moz-transition: top ease-in-out .5s, right ease-in-out .5s;
+	transition: top ease-in-out .5s, right ease-in-out .5s;
 	overflow: hidden;
 }
 
@@ -113,8 +114,21 @@ ul li {
 	cursor: pointer;
 }
 
+.slide.slide-top {
+	top: -100vh;
+}
+
+.slide.slide-right {
+	right: -100vw;
+}
+
+.slide.slide-left {
+	right: 100vw;
+}
+
 .slide.slide-show, .slide.slide-first {
 	top: 0;
+	right: 0;
 }
 
 .slide.slide-last:hover {
@@ -146,7 +160,8 @@ ul li {
 
 .slide .content-frame .content img {
 	max-width: 100%;
-	margin-bottom: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .slide .img-full {

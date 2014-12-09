@@ -94,7 +94,9 @@ app.gallery = function() {
 
 app.run = function() {
 	// Immediately pause all but first video
-	$('.mainvideo').not('.mainvideo-first').get(0).pause();
+	if ($('video.mainvideo').not('.mainvideo-first').length !== 0) {
+		$('video.mainvideo').not('.mainvideo-first').get(0).pause();
+	}
 
 	// Check if the URL hash is requesting a slide, and set up a listener
 	app.checkHash();
@@ -110,7 +112,7 @@ app.run = function() {
 	$('.img-slideshow .content').html($('.img-slideshow a:first').find('img').attr('rel')).animate({opacity: 0.7}, 400);
 	setInterval(app.gallery,6000);
 
-	$('.mainvideo').on('ended click', function() {
+	$('video.mainvideo').on('ended click', function() {
 		// Skip to the next video if it exists when the video is finished or clicked
 		var vid = $(this);
 
