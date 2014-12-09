@@ -121,6 +121,10 @@ ul li {
 	margin: auto;
 }
 
+.slide .content-frame .content img {
+	max-width: 100%;
+}
+
 .slide .img-full {
 	width: 100%;
 	height: 100%;
