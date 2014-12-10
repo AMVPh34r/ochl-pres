@@ -347,5 +347,9 @@ ul li {
 }
 
 .font-large {
+	font-size: 4vh;
+}
+
+.font-xlarge {
 	font-size: 6vh;
 }
